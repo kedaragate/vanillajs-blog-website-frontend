@@ -6,7 +6,9 @@ console.log(body);
 
 fetch("https://node-js-app-with-auth.herokuapp.com/api/blogs")
   .then((res) => res.json())
-  .then((data) => createHTML(data))
+  .then((data) => {
+    createHTML(data);
+  })
   .catch((err) => console.log(err));
 
 const createHTML = function (data) {
@@ -15,8 +17,7 @@ const createHTML = function (data) {
     <h3>${item.author}</h3>
     <p>${item.body}</p>`;
   });
-
-  items.map((element) => {
-    body.insertAdjacentHTML("afterend", element);
+  items.map((ele) => {
+    body.appendChild(ele);
   });
 };
