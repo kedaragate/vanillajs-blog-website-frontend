@@ -9,10 +9,8 @@ fetch("https://node-js-app-with-auth.herokuapp.com/api/blogs")
   .then((res) => res.json())
   .then((data) => {
      const result=
-     data.map(ele=>createHTML(ele))
-     container.insertAdjacentHTML
-     
-     ("afterbegin",result.join(","))
+     data.map(ele=>createHTML(ele));
+container.insertAdjacentHTML("afterbegin",result.join(","))
     
   })
   .catch((err) => console.log(err));
