@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Site</title>
+    <!-- <link rel="stylesheet" href="login.css" /> -->
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li class="nav-menu-item"><a href="../home/home.html">Home</a></li>
+        <li class="nav-menu-item">
+          <a href="../writeblogs/writeblogs.html">Write Blogs</a>
+        </li>
+        <li class="nav-menu-item">
+          <a href="../contactus/contactus.html">Contact Us</a>
+        </li>
+      </ul>
+      <button class="btn login-btn">
+        <a href="../login/login.html">Login</a>
+      </button>
+      <button class="btn register-btn">
+        <a href="../register/register.html">Register</a>
+      </button>
+    </nav>
+    <div class="container">
+      <form id="login-form">
+        <label for="emailId">Email Id</label>
+        <input
+          type="text"
+          placeholder="Email Id"
+          name="emailId"
+          id="emailId-login"
+        /><br />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="password-login"
+        />
+        <button type="submit" id="login-btn btn">Login</button>
+      </form>
+    </div>
+    <script src="login.js"></script>
+  </body>
+</html>

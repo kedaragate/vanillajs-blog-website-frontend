@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li class="nav-menu-item"><a href="../home/home.html">Home</a></li>
+        <li class="nav-menu-item">
+          <a href="../writeblogs/writeblogs.html">Write Blogs</a>
+        </li>
+        <li class="nav-menu-item">
+          <a href="../contactus/contactus.html">Contact Us</a>
+        </li>
+      </ul>
+      <button class="btn login-btn">
+        <a href="../login/login.html">Login</a>
+      </button>
+      <button class="btn register-btn">
+        <a href="../register/register.html">Register</a>
+      </button>
+    </nav>
+    <div class="container">
+      <form id="registration-form">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          placeholder="First Name"
+          name="firstName"
+          id="firstName"
+        />
+
+        <br />
+
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          placeholder="Last Name"
+          name="lastName"
+          id="lastName"
+        />
+
+        <br />
+
+        <label for="emailId">Email Id</label>
+        <input type="text" placeholder="Email Id" name="emailId" id="emailId" />
+
+        <br />
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="password"
+        />
+        <input type="radio" id="admin" name="role" value="admin" role="admin" />
+        <label for="admin">Admin</label><br />
+        <input
+          type="radio"
+          id="normal"
+          name="role"
+          value="normal"
+          role="normal"
+        />
+        <label for="normal">Normal User</label><br />
+
+        <button type="submit" class="register-btn btn">Register</button>
+      </form>
+    </div>
+    <script src="./register.js"></script>
+  </body>
+</html>

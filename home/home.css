@@ -1,0 +1,26 @@
+body {
+  background: rgb(115, 111, 111);
+  background: linear-gradient(
+    270deg,
+    rgba(115, 111, 111, 1) 16%,
+    rgba(172, 172, 172, 1) 100%
+  );
+}
+.blogs-container {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  margin: 0 auto;
+}
+.blog {
+  margin: 10px 10px;
+  width: 40%;
+  flex-grow: 2;
+  padding: 10px 10px;
+  background-color: white;
+  border-radius: 10px 10px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
