@@ -1,11 +1,4 @@
-body {
-  background: rgb(115, 111, 111);
-  background: linear-gradient(
-    270deg,
-    rgba(115, 111, 111, 1) 16%,
-    rgba(172, 172, 172, 1) 100%
-  );
-}
+
 .blogs-container {
   width: 1200px;
   display: flex;
