@@ -7,7 +7,10 @@ console.log(body);
 fetch("https://node-js-app-with-auth.herokuapp.com/api/blogs")
   .then((res) => res.json())
   .then((data) => {
-    createHTML(data);
+    data.forEach((element) => {
+      createHTML(element);
+      console.log(element);
+    });
   })
   .catch((err) => console.log(err));
 
