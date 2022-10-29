@@ -14,8 +14,9 @@ registrationForm.addEventListener("submit", (e) => {
   const form = new FormData(registrationForm);
   const body = Object.fromEntries(form);
   console.log(body);
-
-  fetch(`https://node-js-app-with-auth.herokuapp.com/api/register`, {
+  const url = "http://localhost:5000/api/register";
+  // const url `https://node-js-app-with-auth.herokuapp.com/api/register`
+  fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

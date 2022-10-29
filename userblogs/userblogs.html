@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="userblogs.css" />
   </head>
   <body>
     <nav class="navbar">
       <ul class="nav-menu">
         <li class="nav-menu-item"><a href="../index.html">Home</a></li>
         <li class="nav-menu-item">
-          <a href="../writeblogs/writeblogs.html">Write Blogs</a>
+          <a href="../userblogs/userblogs.html">Your Blogs</a>
         </li>
         <li class="nav-menu-item">
           <a href="../contactus/contactus.html">Contact Us</a>
@@ -30,10 +31,16 @@
           type="text"
           placeholder="Blog Title"
           name="title"
-          id="blogtitle"
+          id="blog-title"
         /><br />
 
-        <input type="text" placeholder="Author" name="author" id="author" />
+        <input
+          type="text"
+          placeholder="Author"
+          name="author"
+          id="author"
+          hidden
+        />
         <textarea
           name="body"
           id="blog-body"
@@ -41,7 +48,10 @@
         ></textarea>
         <button type="submit" id="submit-blog-btn btn">Submit</button>
       </form>
+      <h1>Your Blogs</h1>
+      <div id="container"></div>
+      <div id="blog-edit-container"></div>
     </div>
-    <script src="./writeblogs.js"></script>
+    <script type="module" src="./userblogs.js"></script>
   </body>
 </html>

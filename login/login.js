@@ -4,7 +4,9 @@ loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const form = new FormData(loginForm);
   const body = Object.fromEntries(form);
-  fetch(`https://node-js-app-with-auth.herokuapp.com/api/login`, {
+  const url = "http://localhost:5000/api/login";
+  // const url = `https://node-js-app-with-auth.herokuapp.com/api/login`
+  fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -18,6 +20,7 @@ loginForm.addEventListener("submit", (e) => {
         // setTimeout((location.href = "../writeblogs/writeblogs.html"), 10000);
 
         sessionStorage.setItem("accessToken", data.accessToken);
+        sessionStorage.setItem("user", JSON.stringify(data.user));
       } else {
         console.log(data.message);
       }
