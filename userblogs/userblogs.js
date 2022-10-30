@@ -57,7 +57,7 @@ if (!accessToken) {
 
   const currentUserId = JSON.parse(sessionStorage.getItem("user")).id;
   const getBlogData = async () => {
-    const response = await fetch(putUrl);
+    const response = await fetch(Url);
     const data = await response.json();
     console.log(data);
     return data;
