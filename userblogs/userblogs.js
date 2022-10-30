@@ -32,10 +32,10 @@ if (!accessToken) {
     const form = new FormData(blog);
 
     const body = Object.fromEntries(form);
-    console.log(body);
+
     const accessToken = `JWT ${sessionStorage.getItem("accessToken")}`;
-    // const postUrl=`https://node-js-app-with-auth.herokuapp.com/api/blogs`;
-    const postUrl = "http://localhost:5000/api/blogs";
+    const postUrl = `https://node-js-app-with-auth.herokuapp.com/api/blogs`;
+    // const postUrl = "http://localhost:5000/api/blogs";
     fetch(postUrl, {
       method: "POST",
       headers: {
@@ -52,8 +52,8 @@ if (!accessToken) {
   });
 
   const container = document.getElementById("container");
-  const putUrl = "http://localhost:5000/api/blogs";
-  // const putUrl = "https://node-js-app-with-auth.herokuapp.com/api/blogs";
+  // const Url = "http://localhost:5000/api/blogs";
+  const Url = "https://node-js-app-with-auth.herokuapp.com/api/blogs";
 
   const currentUserId = JSON.parse(sessionStorage.getItem("user")).id;
   const getBlogData = async () => {
@@ -145,8 +145,8 @@ placeholder=${blogToEdit[0].title}
       const blogEditButton = document.getElementById("blog-edit-btn");
       if (e.target === blogEditButton) {
         const accessToken = `JWT ${sessionStorage.getItem("accessToken")}`;
-        // const url=`https://node-js-app-with-auth.herokuapp.com/api/blogs`;
-        const url = `http://localhost:5000/api/blogs/${blogCardId}`;
+        const url = `https://node-js-app-with-auth.herokuapp.com/api/blogs/${blogCardId}`;
+        // const url = `http://localhost:5000/api/blogs/${blogCardId}`;
         fetch(url, {
           method: "PUT",
           headers: {
@@ -182,8 +182,8 @@ placeholder=${blogToEdit[0].title}
 
     if (e.target === deleteBlogButton) {
       const accessToken = `JWT ${sessionStorage.getItem("accessToken")}`;
-      // const url=`https://node-js-app-with-auth.herokuapp.com/api/blogs`;
-      const url = `http://localhost:5000/api/blogs/${blogCardId}`;
+      const url = `https://node-js-app-with-auth.herokuapp.com/api/blogs`;
+      // const url = `http://localhost:5000/api/blogs/${blogCardId}`;
       fetch(url, {
         method: "DELETE",
         headers: {

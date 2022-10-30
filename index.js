@@ -3,8 +3,8 @@ const blogTitle = document.getElementsByClassName("blog-title");
 const blogDescription = document.getElementsByClassName("blog-body");
 const body = document.getElementsByTagName("body");
 const container = document.getElementById("container");
-const url = "http://localhost:5000/api/blogs";
-// const url = "https://node-js-app-with-auth.herokuapp.com/api/blogs";
+// const url = "http://localhost:5000/api/blogs";
+const url = "https://node-js-app-with-auth.herokuapp.com/api/blogs";
 async function getAllBlogs() {
   const res = await fetch(url);
   const data = await res.json();
@@ -29,9 +29,9 @@ if ("speechSynthesis" in window) {
   console.log("speech Synthesis is not Supported 😞");
 }
 
-allBlogs.then((data) => {
-  console.log(data);
-  let utterance = new SpeechSynthesisUtterance(data[0].body);
-  console.log(utterance);
-  // speechSynthesis.speak(utterance);
-});
+// allBlogs.then((data) => {
+//   console.log(data);
+//   let utterance = new SpeechSynthesisUtterance(data[0].body);
+//   console.log(utterance);
+//   // speechSynthesis.speak(utterance);
+// });
