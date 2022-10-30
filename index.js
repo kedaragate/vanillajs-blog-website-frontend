@@ -22,7 +22,8 @@ allBlogs.then((data) => {
 const createHTML = function (item) {
   return `<div id=${item._id} class="blog-card"><h3 class="blog-title" name="title" >${item.title}</h3><button id="blog-speech">Listen Audio</button>
     <h4 class="author" name="author" id=${item.author._id}>${item.author.firstName} ${item.author.lastName}</h4>
-    <p class="blog-body" name="body">${item.body}</p></div>`;
+    <p class="blog-body" name="body">${item.body}
+     </p></div>`;
 };
 
 if ("speechSynthesis" in window) {
@@ -37,3 +38,5 @@ if ("speechSynthesis" in window) {
 //   console.log(utterance);
 //   // speechSynthesis.speak(utterance);
 // });
+
+const readMoreText = document.getElementsByClassName("readmore");

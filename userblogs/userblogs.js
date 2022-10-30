@@ -83,6 +83,7 @@ if (!accessToken) {
     console.log(blogs);
 
     const blogToEdit = blogs.filter((blogItem) => {
+      console.log(blogItem);
       return blogItem._id == blogCardId;
     });
     console.log(blogToEdit);
@@ -114,14 +115,14 @@ placeholder=${blogToEdit[0].title}
   </form>`;
 
     const blogEditContainer = document.getElementById("blog-edit-container");
-
+    blogEditContainer.innerHTML = null;
     blogEditContainer.insertAdjacentHTML("afterbegin", editBlogForm);
     const editedBlogTitle = document.getElementById("edit-blog-title");
     const editedBlogBody = document.getElementById("edit-blog-body");
     editedBlogTitle.value = blogToEdit[0].title;
     editedBlogBody.innerText = blogToEdit[0].body;
-    console.log(editedBlogTitle);
-    console.log(editedBlogBody);
+    // console.log(editedBlogTitle);
+    // console.log(editedBlogBody);
 
     editedBlogTitle.addEventListener("keyup", (e) => {
       editedBlogTitle.value = e.target.value;
@@ -136,7 +137,7 @@ placeholder=${blogToEdit[0].title}
     const editedBlogHtmlForm = document.getElementById("edited-blog");
 
     editedBlogHtmlForm.addEventListener("submit", (e) => {
-      e.preventDefault();
+      // e.preventDefault();
 
       const form = new FormData(editedBlogHtmlForm);
 
