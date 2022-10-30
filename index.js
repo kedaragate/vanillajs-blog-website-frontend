@@ -8,11 +8,13 @@ const url = "https://node-js-app-with-auth.herokuapp.com/api/blogs";
 async function getAllBlogs() {
   const res = await fetch(url);
   const data = await res.json();
+  console.log(data);
   return data;
 }
 const allBlogs = getAllBlogs();
 
 allBlogs.then((data) => {
+  console.log(data);
   const result = data.map((ele) => createHTML(ele));
   container.insertAdjacentHTML("afterbegin", result.join(" "));
 });
