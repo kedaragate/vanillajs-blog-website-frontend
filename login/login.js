@@ -2,6 +2,7 @@ const loginForm = document.getElementById("login-form");
 
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
+
   const form = new FormData(loginForm);
   const body = Object.fromEntries(form);
   const url = "http://localhost:5000/api/login";
@@ -17,7 +18,7 @@ loginForm.addEventListener("submit", (e) => {
     .then((data) => {
       if (data.accessToken) {
         console.log(data);
-        // setTimeout((location.href = "../writeblogs/writeblogs.html"), 10000);
+        location.href = "../userblogs/userblogs.html";
 
         sessionStorage.setItem("accessToken", data.accessToken);
         sessionStorage.setItem("user", JSON.stringify(data.user));
