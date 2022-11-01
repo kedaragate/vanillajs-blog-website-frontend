@@ -148,8 +148,8 @@ placeholder=${blogToEdit[0].title}
       console.log(e.target);
       if (e.target === editedBlogHtmlForm) {
         const accessToken = `JWT ${sessionStorage.getItem("accessToken")}`;
-        // const url = `https://node-js-app-with-auth.herokuapp.com/api/blogs/${blogCardId}`;
-        const url = `http://localhost:5000/api/blogs/${blogCardId}`;
+         const url = `https://node-js-app-with-auth.herokuapp.com/api/blogs/${blogCardId}`;
+       // const url = `http://localhost:5000/api/blogs/${blogCardId}`;
         fetch(url, {
           method: "PUT",
           headers: {
