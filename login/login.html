@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Site</title>
-    <!-- <link rel="stylesheet" href="login.css" /> -->
+    <link rel="stylesheet" href="login.css" />
   </head>
   <body>
     <nav class="navbar">
+      <h1 id="logo-title">Blogger's World</h1>
       <ul class="nav-menu">
         <li class="nav-menu-item"><a href="../index.html">Home</a></li>
         <li class="nav-menu-item">
@@ -18,30 +19,28 @@
           <a href="../contactus/contactus.html">Contact Us</a>
         </li>
       </ul>
-      <button class="btn login-btn">
-        <a href="../login/login.html">Login</a>
-      </button>
-      <button class="btn register-btn">
-        <a href="../register/register.html">Register</a>
-      </button>
+      <div class="nav-btn-container">
+        <button class="navbar-btn" id="login-btn">Login</button>
+        <button class="navbar-btn" id="register-btn">Register</button>
+      </div>
     </nav>
     <div class="container">
       <form id="login-form">
-        <label for="emailId">Email Id</label>
+        <h3>Login to your account</h3>
         <input
           type="text"
           placeholder="Email Id"
           name="emailId"
           id="emailId-login"
         /><br />
-        <label for="password">Password</label>
+
         <input
           type="password"
           placeholder="Password"
           name="password"
           id="password-login"
         />
-        <button type="submit" id="login-btn btn">Login</button>
+        <button type="submit" id="login-btn">Login</button>
       </form>
     </div>
     <script type="module" src="login.js"></script>

@@ -29,3 +29,14 @@ registrationForm.addEventListener("submit", (e) => {
       console.log(err);
     });
 });
+// Navbar
+
+const loginBtn = document.getElementById("login-btn");
+const registerBtn = document.getElementById("register-btn");
+
+loginBtn.addEventListener("click", () => {
+  location.href = "../login/login.html";
+});
+registerBtn.addEventListener("click", () => {
+  location.href = "./register.html";
+});

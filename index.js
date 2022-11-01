@@ -5,6 +5,7 @@ const body = document.getElementsByTagName("body");
 const container = document.getElementById("container");
 // const url = "http://localhost:5000/api/blogs";
 const url = "https://node-js-app-with-auth.herokuapp.com/api/blogs";
+
 async function getAllBlogs() {
   const res = await fetch(url);
   const data = await res.json();
@@ -40,3 +41,20 @@ if ("speechSynthesis" in window) {
 // });
 
 const readMoreText = document.getElementsByClassName("readmore");
+
+// Navbar
+
+const loginBtn = document.getElementById("login-btn");
+const registerBtn = document.getElementById("register-btn");
+
+loginBtn.addEventListener("click", () => {
+  // const url = window.history.replaceState("", "Login", "./login/login.html");
+  location.href = "./login/login.html";
+  // window.history.replaceState("", "Login", "./login.html");
+  // window.location(url);
+});
+// registerBtn.addEventListener("click", () => {
+//   location.href = "./register/register.html";
+// });
+
+// console.log(window.history);

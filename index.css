@@ -24,8 +24,8 @@ body {
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
   border: ; */
   border: 0.2px solid rgb(212, 212, 212);
-  padding: 10px 10px;
-  margin-bottom: 2px;
+  padding: 1rem 1rem;
+  margin-bottom: 0.2rem;
   background-color: rgb(255, 255, 255);
   width: 90%;
   height: fit-content;
@@ -33,10 +33,12 @@ body {
 
 .navbar {
   display: flex;
+  max-width: 100%;
 
   justify-content: space-between;
   align-items: center;
-  background: rgb(2, 57, 91);
+  background: rgb(34, 54, 34);
+  font-size: 1rem;
 }
 .nav-menu {
   display: flex;
@@ -48,8 +50,7 @@ body {
 .nav-menu-item > a {
   text-decoration: none;
 
-  font-weight: bold;
-  font-size: large;
+  font-size: 1.2rem;
 }
 
 .nav-menu-item > a {
@@ -58,27 +59,21 @@ body {
 }
 
 .navbar-btn {
-  background-color: white;
-  border: none;
-  padding: 8px 20px;
+  background-color: rgb(34, 54, 34);
+  border: 0.1px solid white;
+  padding: 0.8rem 2rem;
   margin: 0 10px;
-  border-radius: 5px;
-  color: rgb(2, 57, 91);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
 }
 .navbar-btn:hover {
   cursor: pointer;
-}
-.navbar-btn > a {
-  text-decoration: none;
-  font-family: inherit;
-  font-weight: bold;
-  color: rgb(2, 57, 91);
-}
-.navbar-btn > a :active {
-  color: rgb(2, 57, 91);
+  background-color: white;
+  color: rgb(34, 54, 34);
 }
 
 #logo-title {
   color: white;
-  margin-left: 10px;
+  margin-left: 1rem;
 }
