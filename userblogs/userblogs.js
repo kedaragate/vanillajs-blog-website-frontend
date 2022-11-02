@@ -10,6 +10,7 @@ const loginAndRegisterContainer = document.getElementById(
 const navbarbuttonContainer = document.getElementById("navbar-btn-container");
 const logOutButton = document.getElementById("logout-btn");
 const logOutContainer = document.getElementsByClassName("logout-container");
+const blogEditContainer = document.getElementById("blog-edit-container");
 if (!accessToken) {
   location.href = "../login/login.html";
   // navbarbuttonContainer.appendChild(loginAndRegisterContainer);
@@ -78,6 +79,7 @@ if (!accessToken) {
 
   container.addEventListener("click", (e) => {
     e.preventDefault();
+
     const blogCardId = e.target.parentElement.id;
     const blogs = JSON.parse(sessionStorage.getItem("usersBlogs"));
     console.log(blogs);
@@ -89,8 +91,7 @@ if (!accessToken) {
     console.log(blogToEdit);
 
     const editBlogForm = `<form type=submit id=edited-blog>
-   
-  <input
+   <input
   type="text"
 placeholder=${blogToEdit[0].title}
   name="title"
@@ -114,7 +115,6 @@ placeholder=${blogToEdit[0].title}
 ></textarea>
 <button type="submit" id="submit-edited-blog-btn">Submit</button>
   </form>`;
-
     const blogEditContainer = document.getElementById("blog-edit-container");
     blogEditContainer.innerHTML = null;
     blogEditContainer.insertAdjacentHTML("afterbegin", editBlogForm);
@@ -145,6 +145,9 @@ placeholder=${blogToEdit[0].title}
       const body = Object.fromEntries(form);
       console.log(blogCardId);
       const blogEditButton = document.getElementById("blog-edit-btn");
+      blogEditButton.addEventListener("click", () => {
+        blogEditContainer.classList.remove("hidden");
+      });
       console.log(blogEditButton);
       console.log(e.target);
       if (e.target === editedBlogHtmlForm) {
@@ -166,6 +169,11 @@ placeholder=${blogToEdit[0].title}
           });
       }
     });
+  });
+  const closeBlogEditing = document.getElementById("close-btn");
+  closeBlogEditing.addEventListener("click", () => {
+    console.log("clicked");
+    blogEditContainer.classList.add("hidden");
   });
 
   const createHTML = function (item) {
