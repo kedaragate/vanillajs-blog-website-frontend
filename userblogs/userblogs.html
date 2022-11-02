@@ -26,6 +26,7 @@
     </nav>
     <div class="container">
       <form id="blog-form">
+        <h3>Add New Blog</h3>
         <input
           type="text"
           placeholder="Blog Title"
@@ -45,11 +46,13 @@
           id="blog-body"
           placeholder="Write blog here"
         ></textarea>
-        <button type="submit" id="submit-blog-btn btn">Submit</button>
+        <button type="submit" id="submit-blog-btn">Submit</button>
       </form>
-      <h1>Your Blogs</h1>
-      <div id="container"></div>
-      <div id="blog-edit-container"></div>
+
+      <div id="container"><h3>Your Blogs</h3></div>
+      <div id="blog-edit-container">
+        <button id="close-btn">X</button>
+      </div>
     </div>
     <script type="module" src="./userblogs.js"></script>
   </body>

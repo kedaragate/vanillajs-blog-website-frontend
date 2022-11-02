@@ -73,7 +73,7 @@ if (!accessToken) {
       return createHTML(ele);
     });
 
-    container.insertAdjacentHTML("afterbegin", htmlElement.join(" "));
+    container.insertAdjacentHTML("beforeend", htmlElement.join(" "));
   });
 
   container.addEventListener("click", (e) => {
@@ -89,6 +89,7 @@ if (!accessToken) {
     console.log(blogToEdit);
 
     const editBlogForm = `<form type=submit id=edited-blog>
+   
   <input
   type="text"
 placeholder=${blogToEdit[0].title}
@@ -148,8 +149,8 @@ placeholder=${blogToEdit[0].title}
       console.log(e.target);
       if (e.target === editedBlogHtmlForm) {
         const accessToken = `JWT ${sessionStorage.getItem("accessToken")}`;
-         const url = `https://node-js-app-with-auth.herokuapp.com/api/blogs/${blogCardId}`;
-       // const url = `http://localhost:5000/api/blogs/${blogCardId}`;
+        const url = `https://node-js-app-with-auth.herokuapp.com/api/blogs/${blogCardId}`;
+        // const url = `http://localhost:5000/api/blogs/${blogCardId}`;
         fetch(url, {
           method: "PUT",
           headers: {
@@ -170,8 +171,8 @@ placeholder=${blogToEdit[0].title}
   const createHTML = function (item) {
     return `<div id=${item._id} class="blog-card">
    
-    <h3 class="blog-title" name="title" >${item.title}</h3>
-    <h4 class="author" name="author" id=${item.author._id}>${item.author.firstName} ${item.author.lastName}</h4>
+    <h4 class="blog-title" name="title" >${item.title}</h4>
+    <h5 class="author" name="author" id=${item.author._id}>${item.author.firstName} ${item.author.lastName}</h5>
     <p class="blog-body" name="body">${item.body}</p>
     <button type="submit" id=blog-edit-btn>Edit</button>
     <button type="submit" id=delete-btn class=blog-delete-btn>Delete</button></div>`;
