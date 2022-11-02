@@ -11,6 +11,8 @@ const navbarbuttonContainer = document.getElementById("navbar-btn-container");
 const logOutButton = document.getElementById("logout-btn");
 const logOutContainer = document.getElementsByClassName("logout-container");
 const blogEditContainer = document.getElementById("blog-edit-container");
+
+blogEditContainer.classList.add("hidden");
 if (!accessToken) {
   location.href = "../login/login.html";
   // navbarbuttonContainer.appendChild(loginAndRegisterContainer);
@@ -145,9 +147,9 @@ placeholder=${blogToEdit[0].title}
       const body = Object.fromEntries(form);
       console.log(blogCardId);
       const blogEditButton = document.getElementById("blog-edit-btn");
-      blogEditButton.addEventListener("click", () => {
-        blogEditContainer.classList.remove("hidden");
-      });
+      // blogEditButton.addEventListener("click", () => {
+      //   blogEditContainer.classList.remove("hidden");
+      // });
       console.log(blogEditButton);
       console.log(e.target);
       if (e.target === editedBlogHtmlForm) {
@@ -170,11 +172,11 @@ placeholder=${blogToEdit[0].title}
       }
     });
   });
-  const closeBlogEditing = document.getElementById("close-btn");
-  closeBlogEditing.addEventListener("click", () => {
-    console.log("clicked");
-    blogEditContainer.classList.add("hidden");
-  });
+  // const closeBlogEditing = document.getElementById("close-btn");
+  // closeBlogEditing.addEventListener("click", () => {
+  //   console.log("clicked");
+  //   blogEditContainer.classList.add("hidden");
+  // });
 
   const createHTML = function (item) {
     return `<div id=${item._id} class="blog-card">
