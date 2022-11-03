@@ -102,3 +102,6 @@ body {
 .role-div > input {
   accent-color: rgb(34, 54, 34);
 }
+#error {
+  color: red;
+}

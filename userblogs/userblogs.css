@@ -113,10 +113,14 @@ body {
 .blog-card {
   border: 0.2px solid rgb(212, 212, 212);
   padding: 1rem 1rem;
+  margin-top: 1rem;
   margin-bottom: 0.2rem;
   background-color: rgb(255, 255, 255);
   width: 90%;
   height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #blog-edit-container {
@@ -178,5 +182,5 @@ body {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }

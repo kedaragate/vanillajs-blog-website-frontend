@@ -1,4 +1,15 @@
 const registrationForm = document.getElementById("registration-form");
+const password = document.getElementById("password");
+const confirmPassword = document.getElementById("confirm-password");
+const error = document.getElementById("error");
+
+confirmPassword.addEventListener("input", (e) => {
+  if (password.value !== e.target.value) {
+    const html = `<p id="error">Passwords did not match.</p> `;
+    registrationForm.insertAdjacentHTML("afterend", html);
+  }
+});
+
 function displayRadioValue() {
   var ele = document.getElementsByName("gender");
 
