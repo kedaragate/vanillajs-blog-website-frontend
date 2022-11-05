@@ -121,6 +121,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 #blog-edit-container {
@@ -183,4 +184,21 @@ body {
 
 .hidden {
   visibility: hidden;
+}
+
+.btn-div {
+  position: absolute;
+
+  right: 1rem;
+}
+.btn {
+  background: none;
+  border: none;
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn > i {
+  color: rgb(34, 54, 34);
 }

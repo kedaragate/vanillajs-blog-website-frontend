@@ -47,6 +47,7 @@ blog.addEventListener("submit", (e) => {
 const container = document.getElementById("container");
 // const Url = "http://localhost:5000/api/blogs";
 const Url = "https://node-js-app-with-auth.herokuapp.com/api/blogs";
+console.log(container);
 
 const currentUserId = JSON.parse(sessionStorage.getItem("user")).id;
 const getBlogData = async () => {
@@ -63,6 +64,7 @@ usersBlogs.then((data) => {
 
   sessionStorage.setItem("usersBlogs", JSON.stringify(result));
   const htmlElement = result.map((ele) => {
+    console.log(createHTML(ele));
     return createHTML(ele);
   });
 
@@ -73,15 +75,20 @@ container.addEventListener("click", (e) => {
   e.preventDefault();
 
   const blogCardId = e.target.parentElement.id;
+  console.log(e.target.parentElement);
+
   const blogs = JSON.parse(sessionStorage.getItem("usersBlogs"));
   console.log(blogs);
 
   const blogToEdit = blogs.filter((blogItem) => {
     console.log(blogItem);
+    console.log(blogCardId);
+
     return blogItem._id == blogCardId;
   });
+  console.log(blogToEdit);
 
-  const editBlogForm = `<form type=submit id=edited-blog>
+  const editBlogForm = `<form type=submit id=edited-blog >
    <input
   type="text"
 placeholder=${blogToEdit[0].title}
@@ -135,7 +142,7 @@ placeholder=${blogToEdit[0].title}
     console.log(blogCardId);
     const blogEditButton = document.getElementById("blog-edit-btn");
     blogEditButton.addEventListener("click", () => {
-      blogEditContainer.style.visibility = visible;
+      blogEditContainer.style.visibility = "visible";
     });
 
     if (e.target === editedBlogHtmlForm) {
@@ -166,13 +173,18 @@ placeholder=${blogToEdit[0].title}
 
 const createHTML = function (item) {
   return `<div id=${item._id} class="blog-card">
-    <h3>Your Blogs</h3>
    
+   
+    <i type=button class="fa-solid fa-pen-to-square btn" id=blog-edit-btn title=Edit></i>
+  <i type=button class="fa-solid fa-trash btn" id=delete-btn title=Delete></i>
+  
     <h4 class="blog-title" name="title" >${item.title}</h4>
     <h5 class="author" name="author" id=${item.author._id}>${item.author.firstName} ${item.author.lastName}</h5>
     <p class="blog-body" name="body">${item.body}</p>
-    <i class="fa-solid fa-pen-to-square" type="submit" id=blog-edit-btn></i>
-  <i class="fa-solid fa-trash blog-delete-btn" type="submit" id=delete-btn></i></div>`;
+ 
+  </div>`;
+  //
+  //
 };
 
 container.addEventListener("click", (e) => {
@@ -183,7 +195,7 @@ container.addEventListener("click", (e) => {
 
   if (e.target === deleteBlogButton) {
     const accessToken = `JWT ${sessionStorage.getItem("accessToken")}`;
-    const url = `https://node-js-app-with-auth.herokuapp.com/api/blogs`;
+    const url = `https://node-js-app-with-auth.herokuapp.com/api/blogs/${blogCardId}`;
     // const url = `http://localhost:5000/api/blogs/${blogCardId}`;
     fetch(url, {
       method: "DELETE",
