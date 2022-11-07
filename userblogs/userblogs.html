@@ -24,7 +24,7 @@
         <button class="navbar-btn" id="register-btn">Register</button>
       </div>
     </nav>
-    <div class="container">
+    <div class="main-container"">
       <form id="blog-form">
         <h3>Add New Blog</h3>
         <input
@@ -49,13 +49,17 @@
         <button type="submit" id="submit-blog-btn">Submit</button>
       </form>
 
-      <div id="container">
+      <div id="user-blogs-container">
         <h3>Your Blogs</h3>
         <div id="blog-edit-container" class="hidden">
           <button id="close-btn">X</button>
         </div>
       </div>
     </div>
+
+    <script type="module" src="./createHTML.js"></script>
+    <script type="module" src="./editBlogHTML.js"></script>
+    <script type="module" src="./deleteBlog.js"></script>
     <script type="module" src="./userblogs.js"></script>
     <script
       src="https://kit.fontawesome.com/60ce62e26d.js"

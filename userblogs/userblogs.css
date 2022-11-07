@@ -100,7 +100,7 @@ body {
   margin-bottom: 10px;
 }
 
-#container {
+#user-blogs-container {
   margin-top: 2rem;
   width: 50%;
   display: flex;
@@ -135,6 +135,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: rgba(255, 255, 255);
+  z-index: 10;
 }
 #edited-blog {
   /* background-color: rgba(255, 255, 255, 0.95); */

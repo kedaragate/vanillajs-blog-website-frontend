@@ -5,8 +5,8 @@ loginForm.addEventListener("submit", (e) => {
 
   const form = new FormData(loginForm);
   const body = Object.fromEntries(form);
-  // const url = "http://localhost:5000/api/login";
-  const url = `https://node-js-app-with-auth.herokuapp.com/api/login`;
+  const url = "http://localhost:5000/api/login";
+  // const url = `https://node-js-app-with-auth.herokuapp.com/api/login`;
   fetch(url, {
     method: "POST",
     headers: {
