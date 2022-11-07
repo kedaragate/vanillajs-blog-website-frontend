@@ -2,8 +2,8 @@ export default function deleteBlog(e) {
   location.reload();
   const blogCardId = e.target.parentElement.id;
   const accessToken = `JWT ${sessionStorage.getItem("accessToken")}`;
-  // const url = `https://node-js-app-with-auth.herokuapp.com/api/blogs/${blogCardId}`;
-  const url = `http://localhost:5000/api/blogs/${blogCardId}`;
+  const url = `https://node-js-app-with-auth.herokuapp.com/api/blogs/${blogCardId}`;
+  //   const url = `http://localhost:5000/api/blogs/${blogCardId}`;
   fetch(url, {
     method: "DELETE",
     headers: {

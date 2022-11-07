@@ -3,8 +3,8 @@ const blogTitle = document.getElementsByClassName("blog-title");
 const blogDescription = document.getElementsByClassName("blog-body");
 const body = document.getElementsByTagName("body");
 const container = document.getElementById("container");
-const url = "http://localhost:5000/api/blogs";
-// const url = "https://node-js-app-with-auth.herokuapp.com/api/blogs";
+// const url = "http://localhost:5000/api/blogs";
+const url = "https://node-js-app-with-auth.herokuapp.com/api/blogs";
 
 async function getAllBlogs() {
   const res = await fetch(url);

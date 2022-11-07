@@ -28,8 +28,8 @@ blog.addEventListener("submit", (e) => {
   const body = Object.fromEntries(form);
 
   const accessToken = `JWT ${sessionStorage.getItem("accessToken")}`;
-  // const postUrl = "https://node-js-app-with-auth.herokuapp.com/api/blogs";
-  const postUrl = "http://localhost:5000/api/blogs";
+  const postUrl = "https://node-js-app-with-auth.herokuapp.com/api/blogs";
+  // const postUrl = "http://localhost:5000/api/blogs";
   fetch(postUrl, {
     method: "POST",
     headers: {
@@ -47,8 +47,8 @@ blog.addEventListener("submit", (e) => {
 
 const userBlogsContainer = document.getElementById("user-blogs-container");
 
-const getUrl = "http://localhost:5000/api/blogs";
-// const getUrl = "https://node-js-app-with-auth.herokuapp.com/api/blogs";
+// const getUrl = "http://localhost:5000/api/blogs";
+const getUrl = "https://node-js-app-with-auth.herokuapp.com/api/blogs";
 const currentUserId = JSON.parse(sessionStorage.getItem("user")).id;
 const getBlogData = async () => {
   const response = await fetch(getUrl);
